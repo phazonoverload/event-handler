@@ -12,7 +12,7 @@ permalink: /
           A newsletter about running awesome developer events.
         </h2>
         <p class="mt-3 max-w-md mx-auto text-base text-gray-700 sm:text-lg md:mt-5 md:text-xl md:max-w-screen-lg">
-          In each fortnightly newsletter, developer event experts Amy and Kevin will cover an aspect on running impactful, thoughtful and awesome events for software developers. Between them, Amy and Kevin have run over 200 hackathons, conferences, meetups and more. First issue in your mailboxes on October 1.
+          In each fortnightly newsletter, developer event experts <a class="underline" href="https://twitter.com/redroxprojects">Amy</a> and <a class="underline" href="https://twitter.com/_phzn">Kevin</a> will cover an aspect on running impactful, thoughtful and awesome events for software developers. Between them, Amy and Kevin have run over 200 hackathons, conferences, meetups and more. First issue in your mailboxes on October 1.
         </p>
         <div class="mt-10 sm:max-w-lg mx-auto text-center">
           <form class="mt-3 sm:flex" action="https://buttondown.email/api/emails/embed-subscribe/eventhandler" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/eventhandler', 'popupwindow')">
@@ -36,7 +36,7 @@ permalink: /
       <h2 class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">Suggest a Topic</h2>
       <p class="mt-4 text-lg leading-6 text-gray-500">We've planned a few issues ahead, but we're always interested to hear what you'd find interesting!</p>
     </div>
-    <div class="mt-12 grid grid-cols-1 row-gap-6 sm:grid-cols-2 sm:col-gap-8">
+    <form netlify name="idea" action="/thanks" class="mt-12 grid grid-cols-1 row-gap-6 sm:grid-cols-2 sm:col-gap-8">
       <div>
         <label for="first_name" class="block text-sm font-medium leading-5 text-gray-700">First name</label>
         <div class="mt-1 relative rounded-md">
@@ -58,7 +58,7 @@ permalink: /
       <div class="sm:col-span-2">
         <label for="message" class="block text-sm font-medium leading-5 text-gray-700">Idea</label>
         <div class="mt-1 relative rounded-md">
-          <textarea required id="idea" name="idea" rows="4" class="form-textarea appearance-none w-full px-5 py-3 border-2 text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:placeholder-gray-400 focus:border-green-600 outline-none transition duration-150 ease-in-out"></textarea>
+          <textarea required id="message" name="message" rows="4" class="form-textarea appearance-none w-full px-5 py-3 border-2 text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:placeholder-gray-400 focus:border-green-600 outline-none transition duration-150 ease-in-out"></textarea>
         </div>
       </div>
       <div class="sm:col-span-2">
@@ -66,31 +66,6 @@ permalink: /
           <input type="submit" id="submit" type="button" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base leading- outline6 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-red active:bg-green-700 transition ease-in-out duration-150">
         </span>
       </div>
-    </div>
+    </form>
   </div>
 </div>
-
-<script>
-document.getElementById('submit').addEventListener('click', event => {
-  event.preventDefault()
-  const first_name = document.getElementById('first_name').value
-  const last_name = document.getElementById('last_name').value
-  const email = document.getElementById('email').value
-  const idea = document.getElementById('idea').value
-  if(!first_name || !last_name || !email || !idea) {
-    alert('Please be sure to fill in all of the fields to submit the form.')
-  } else {
-    fetch('https://hooks.slack.com/services/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', {
-      method: 'POST',
-      body: JSON.stringify({
-        text: `New idea submitted by ${first_name} ${last_name} at (${email}):\n\n${idea}`
-      })
-    }).then(r => r.text()).then(res => {
-      if(res == 'ok') {
-        document.getElementById('suggest').classList.add('hidden')
-        alert('Thanks! We got your suggestion.')
-      }
-    })
-  }
-})
-</script>

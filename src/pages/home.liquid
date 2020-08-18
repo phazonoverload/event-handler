@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 permalink: /
 ---
 
-<div class="relative bg-red-200 overflow-hidden">
+<div class="relative bg-green-200 overflow-hidden">
   <div class="relative pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32">
     <main class="mt-8 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
       <div class="text-center">
@@ -15,8 +15,8 @@ permalink: /
           In each fortnightly newsletter, developer event experts Amy and Kevin will cover an aspect on running impactful, thoughtful and awesome events for software developers. Between them, Amy and Kevin have run over 200 hackathons, conferences, meetups and more. First issue in your mailboxes on October 1.
         </p>
         <div class="mt-10 sm:max-w-lg mx-auto text-center">
-          <form class="mt-3 sm:flex" action="https://buttondown.email/api/emails/embed-subscribe/yougotthisconf" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/yougotthisconf', 'popupwindow')">
-            <input aria-label="Email" class="appearance-none w-full px-5 py-3 border-2 text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:placeholder-gray-400 focus:border-red-600 outline-none transition duration-150 ease-in-out sm:flex-1" required placeholder="Enter your email"  name="email" id="bd-email">
+          <form class="mt-3 sm:flex" action="https://buttondown.email/api/emails/embed-subscribe/eventhandler" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/eventhandler', 'popupwindow')">
+            <input aria-label="Email" class="appearance-none w-full px-5 py-3 border-2 text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:placeholder-gray-400 focus:border-green-600 outline-none transition duration-150 ease-in-out sm:flex-1" required placeholder="Enter your email"  name="email" id="bd-email">
             <input type="hidden" name="tag" value="ygt-site">
             <input type="hidden" value="1" name="embed">
             <button type="submit" class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-800 shadow hover:bg-gray-700 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">Register</button>
@@ -30,53 +30,67 @@ permalink: /
   </div>
 </div>
 
-<div class="bg-white py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-24">
+<div id="suggest" class="bg-white py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-24">
   <div class="relative max-w-xl mx-auto">
     <div class="text-center">
-      <h2 class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-        Suggest a Topic
-      </h2>
-      <p class="mt-4 text-lg leading-6 text-gray-500">
-        We've planned a few issues ahead, but we're always interested to hear what you'd find interesting!
-      </p>
+      <h2 class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">Suggest a Topic</h2>
+      <p class="mt-4 text-lg leading-6 text-gray-500">We've planned a few issues ahead, but we're always interested to hear what you'd find interesting!</p>
     </div>
-    <div class="mt-12">
-      <form method="POST" data-netlify="true" name="idea" action="/thanks" class="grid grid-cols-1 row-gap-6 sm:grid-cols-2 sm:col-gap-8">
-        <div>
-          <label for="first_name" class="block text-sm font-medium leading-5 text-gray-700">First name</label>
-          <div class="mt-1 relative rounded-md">
-            <input id="first_name" name="first_name" class="form-input appearance-none w-full px-5 py-3 border-2 text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:placeholder-gray-400 focus:border-red-600 outline-none transition duration-150 ease-in-out">
-          </div>
+    <div class="mt-12 grid grid-cols-1 row-gap-6 sm:grid-cols-2 sm:col-gap-8">
+      <div>
+        <label for="first_name" class="block text-sm font-medium leading-5 text-gray-700">First name</label>
+        <div class="mt-1 relative rounded-md">
+          <input required id="first_name" name="first_name" class="form-input appearance-none w-full px-5 py-3 border-2 text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:placeholder-gray-400 focus:border-green-600 outline-none transition duration-150 ease-in-out">
         </div>
-        <div>
-          <label for="last_name" class="block text-sm font-medium leading-5 text-gray-700">Last name</label>
-          <div class="mt-1 relative rounded-md">
-            <input id="last_name" name="last_name" class="form-input appearance-none w-full px-5 py-3 border-2 text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:placeholder-gray-400 focus:border-red-600 outline-none transition duration-150 ease-in-out">
-          </div>
+      </div>
+      <div>
+        <label for="last_name" class="block text-sm font-medium leading-5 text-gray-700">Last name</label>
+        <div class="mt-1 relative rounded-md">
+          <input required id="last_name" name="last_name" class="form-input appearance-none w-full px-5 py-3 border-2 text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:placeholder-gray-400 focus:border-green-600 outline-none transition duration-150 ease-in-out">
         </div>
-        <div class="sm:col-span-2">
-          <label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
-          <div class="mt-1 relative rounded-md">
-            <input id="email" name="email" type="email" class="form-input appearance-none w-full px-5 py-3 border-2 text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:placeholder-gray-400 focus:border-red-600 outline-none transition duration-150 ease-in-out">
-          </div>
+      </div>
+      <div class="sm:col-span-2">
+        <label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
+        <div class="mt-1 relative rounded-md">
+          <input required id="email" name="email" type="email" class="form-input appearance-none w-full px-5 py-3 border-2 text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:placeholder-gray-400 focus:border-green-600 outline-none transition duration-150 ease-in-out">
         </div>
-        <div class="sm:col-span-2">
-          <label for="message" class="block text-sm font-medium leading-5 text-gray-700">Idea</label>
-          <div class="mt-1 relative rounded-md">
-            <textarea id="idea" name="idea" rows="4" class="form-textarea appearance-none w-full px-5 py-3 border-2 text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:placeholder-gray-400 focus:border-red-600 outline-none transition duration-150 ease-in-out"></textarea>
-          </div>
+      </div>
+      <div class="sm:col-span-2">
+        <label for="message" class="block text-sm font-medium leading-5 text-gray-700">Idea</label>
+        <div class="mt-1 relative rounded-md">
+          <textarea required id="idea" name="idea" rows="4" class="form-textarea appearance-none w-full px-5 py-3 border-2 text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:placeholder-gray-400 focus:border-green-600 outline-none transition duration-150 ease-in-out"></textarea>
         </div>
-        <p class="hidden">
-          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-        </p>
-        <div class="sm:col-span-2">
-          <span class="w-full inline-flex rounded-md shadow">
-            <button type="button" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base leading- outline6 font-medium rounded-md text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700 transition ease-in-out duration-150">
-              Submit
-            </button>
-          </span>
-        </div>
-      </form>
+      </div>
+      <div class="sm:col-span-2">
+        <span class="w-full inline-flex rounded-md shadow">
+          <input type="submit" id="submit" type="button" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base leading- outline6 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-red active:bg-green-700 transition ease-in-out duration-150">
+        </span>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+document.getElementById('submit').addEventListener('click', event => {
+  event.preventDefault()
+  const first_name = document.getElementById('first_name').value
+  const last_name = document.getElementById('last_name').value
+  const email = document.getElementById('email').value
+  const idea = document.getElementById('idea').value
+  if(!first_name || !last_name || !email || !idea) {
+    alert('Please be sure to fill in all of the fields to submit the form.')
+  } else {
+    fetch('https://hooks.slack.com/services/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', {
+      method: 'POST',
+      body: JSON.stringify({
+        text: `New idea submitted by ${first_name} ${last_name} at (${email}):\n\n${idea}`
+      })
+    }).then(r => r.text()).then(res => {
+      if(res == 'ok') {
+        document.getElementById('suggest').classList.add('hidden')
+        alert('Thanks! We got your suggestion.')
+      }
+    })
+  }
+})
+</script>
